@@ -1,28 +1,44 @@
-Answer questions marked as "QS"
+QS1.1: I will use a stack due to DFS expanding the nodes in a first in first out manner.
+QS1.2: I was not suprised by the order of the nodes. This is because DFS expands nodes 
+in a first in first out manner. This means I expected the pacman to expand the next node
+immediately next to the node he just expanded. This also means I expected the pacman to
+have a preferred direction due to the getSuccessors function likely selecting the same direction
+as the next node to add to the fringe each time. These predictions were confirmed by the pacman
+clearly preferring to travel left until it could do so no longer. The pacman also does not go
+to every expanded node due to some nodes ending in a dead end.
 
-QS1.1: A stack data structure is used for DFS, because 
+QS2.1: I will use a queue due to BFS expanding the nodes in a first in last out manner.
 
+QS3.1: I used the StayWestSearchAgent for the maze with ghosts. This cost function places a cost of
+2^pos on each node which gives western tiles much larger cost values.
 
-QS1.2: 
+QS4.1: The Manhattan distance heuristic returns the Manhattan distance from each node to the goal
+while the null hueristic just returns 0. The null hueristic returning 0 reduces the A* algorithm 
+to UCS. This means it will return the optimal solution at the cost of computational time. The
+Manhattan distance heuristic is better because it guides A* to search nodes closer to the goal.
+This reduces the amount of nodes that need to be expanded to find the goal.
+QS4.2: The null hueristic causes the agent to explore almost every node to find the goal. However,
+the Manhattan distance function allows the agent to explore nodes in a more direct path to the goal
+and reduces the amount that are exxplored.
 
+QS5.1: I chose the representation (position, corner1Found, corner2Found, corner3Found, corner4Found)
+QS5.2: I had the state be represented as a tuple with two parts, the position and booleans for each 
+corner. To find the successors I checked if the position was was equal to one of the corners and updated
+the booleans accordingly.
 
-QS2.1:
+QS6.1: My heuristic for this problem was the max Manhattan distance out of all avaliable corners. It is
+strong in how easy it is to calculate considering it still reduces the amount of nodes explored by half.
+One weak point is that it doesn't consider any closer nodes and does not offer as much help toward finding
+these nodes. It is consistent because the difference in the Manhattan distance will always be one which is
+equal to the cost of moving.
 
+QS7.1: My heuristic was the sum of the minimum distance to a food pellet and the maximum distance between any
+two given pellets. It is strong in how it contains information about how far from a pellet the pacman is and
+how spread out the pellets are. One weak point is that may be more computationally intensive as it is now
+O(n^2). It is consistent because the difference in the Manhattan distance will always be one which is
+equal to the cost of moving.
 
-QS3.1:
-
-
-
-QS4.1:
-
-
-QS5.1:
-
-
-QS5.2:
-
-
-QS6.1:
-
-
-QS7.1:
+QS8.1: I used the BFS solution by calling the existing bfs function from search.py to find the shortest path 
+to the closest food dot, exploring all possible moves in a level-order manner. The isGoalState function checks 
+if Pacman has reached a food dot. BFS guarantees the shortest path and always finds a solution if one exists. 
+However, it has high memory usage and may be inefficient in large or complex mazes
