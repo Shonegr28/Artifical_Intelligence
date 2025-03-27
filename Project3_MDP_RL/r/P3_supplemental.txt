@@ -1,0 +1,32 @@
+
+######################
+# Supplemental Questions #
+######################
+
+
+Answer the supplemental questions here! Make sure you follow the format if it is asked
+Q1#######################
+QS1.1: 
+
+QS1.2:
+
+Q3#######################
+
+QS3.1: 
+Q5#######################
+
+QS5.1:
+
+QS5.2 [optional]:
+
+Q6#######################
+QS6.1:
+QS6.2 [optional]:
+
+
+Q7#######################
+QS7.1
+
+
+
+
